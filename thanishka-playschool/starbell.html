@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Starbell Kids Playschool 🎈</title>
+
+  <!-- Super Fun Fonts! -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Fredoka+One&family=Nunito:wght@600;800;900&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+  <!-- ☁️ Background Clouds -->
+  <div class="sky-clouds">
+    <div class="cloud c1"></div>
+    <div class="cloud c2"></div>
+    <div class="cloud c3"></div>
+    <div class="cloud c4"></div>
+  </div>
+
+  <!-- 📢 Announcement Bar -->
+  <div class="top-bar">
+    <span style="display: inline-block;">🎉 Admissions Open! Register Now! 🎈</span>
+  </div>
+
+  <!-- 🍔 Navigation -->
+  <header id="navbar">
+    <div class="container nav-wrap">
+      <a href="#" class="logo">
+        <img
+          src="image.png"
+          alt="Starbell Kids logo"
+          class="logo-img"
+          width="60"
+          height="60"
+          decoding="async"
+          loading="eager"
+        >
+        <div class="logo-text-wrapper">
+          <span class="logo-text">Starbell</span>
+          <span class="logo-subtext">Kids</span>
+        </div>
+      </a>
+      <div class="nav-backdrop" id="navBackdrop" hidden></div>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#programs">Play Groups</a></li>
+        <li><a href="#why-us">Why Us?</a></li>
+        <li><a href="#staff">Our Teachers</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#enroll">Enroll</a></li>
+        <li class="mobile-only-btn"><a href="#enroll" class="nav-btn">Join Now!</a></li>
+      </ul>
+      <a href="#enroll" class="nav-btn desktop-btn">Join Now!</a>
+      
+      <button
+        class="hamburger"
+        id="hamburger"
+        type="button"
+        aria-label="Open menu"
+        aria-controls="navMenu"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- 🏰 Hero -->
+  <section class="hero container">
+    <div class="balloons">
+      <div class="balloon b1"></div>
+      <div class="balloon b2"></div>
+      <div class="balloon b3"></div>
+    </div>
+
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="sparkle s1">✨</div>
+        <div class="sparkle s2">⭐</div>
+
+        <h1 class="h1-super">
+          <span class="w1">Play,</span> <br />
+          <span class="w2">Learn &</span> <br />
+          <span class="w3">Grow!</span>
+        </h1>
+        <p class="p-cute">Welcome to Starbell Kids Playschool! A magical wonderland where little giggles turn into big
+          discoveries! <span class="emoji-rainbow" aria-hidden="true">🌈</span><span aria-hidden="true">🧸</span></p>
+        <div class="hero-cta">
+          <a href="#enroll" class="btn btn-pink btn-wiggle">Let's Play! 🚀</a>
+          <a href="#enroll" class="btn btn-yellow btn-wiggle">Book Demo 🎪</a>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="hero-img-wrap">
+          <img
+            src="WhatsApp Image 2026-03-16 at 6.58.34 PM.jpeg"
+            alt="Starbell Kids Playschool front view"
+            width="1200"
+            height="900"
+            loading="eager"
+            decoding="async"
+          >
+        </div>
+        <div class="bounce-sticker">100%<br />FUN!</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🧩 Programs -->
+  <section id="programs" class="programs section-pad">
+    <div class="container">
+      <div class="reveal" style="text-align: center;">
+        <h2 class="h2-title">Discover Our Magical Rooms</h2>
+        <p class="p-cute" style="margin: 0 auto 10px;">Every room is designed for absolute fun and joyful learning!</p>
+        <div class="daycare-callout">🍼 Day Care Available! (8 Months to 6 Years)</div>
+      </div>
+
+      <div class="pg-grid">
+        <div class="pg-card c-pink reveal" style="transition-delay: 0.1s;">
+          <div class="pg-icon">🐣</div>
+          <h3 class="pg-title">Play Group</h3>
+          <div class="pg-age">1.5+ Years</div>
+          <p class="pg-desc">Squishy toys, bright colors, and soft giggles! We focus on walking, talking, and making new
+            friends.</p>
+        </div>
+
+        <div class="pg-card c-blue reveal" style="transition-delay: 0.2s;">
+          <div class="pg-icon">🦋</div>
+          <h3 class="pg-title">Pre Kindergarten</h3>
+          <div class="pg-age">2.5+ Years</div>
+          <p class="pg-desc">Messy art, building blocks, and adventure time! Perfect for curious minds who love to ask
+            "why?".</p>
+        </div>
+
+        <div class="pg-card c-green reveal" style="transition-delay: 0.3s;">
+          <div class="pg-icon">🚀</div>
+          <h3 class="pg-title">Lower Kindergarten</h3>
+          <div class="pg-age">3.5+ Years</div>
+          <p class="pg-desc">Getting ready for bigger ideas! ABCs, 123s, and super fun science experiments with safely
+            guided play.</p>
+        </div>
+
+        <div class="pg-card c-orange reveal" style="transition-delay: 0.4s;">
+          <div class="pg-icon">🎓</div>
+          <h3 class="pg-title">Upper Kindergarten</h3>
+          <div class="pg-age">4.5+ Years</div>
+          <p class="pg-desc">Preparing for real school! Advanced reading, confident communication, and spectacular
+            interactive learning.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🎪 Features -->
+  <section id="why-us" class="why-us">
+    <div class="container">
+      <div class="reveal" style="text-align: center;">
+        <h2 class="h2-title">Why Parents Love Us!</h2>
+        <p class="p-cute" style="margin: 0 auto 50px;">We keep your little ones safe, happy, and constantly amazed.</p>
+      </div>
+      <div class="why-grid reveal">
+
+        <div class="feature-box c-blue">
+          <div class="f-icon">🎨</div>
+          <div class="f-text">
+            <h3>Play-Based Magic</h3>
+            <p>Learning hidden inside super fun games and messy arts & crafts!</p>
+          </div>
+        </div>
+
+        <div class="feature-box">
+          <div class="f-icon" style="background: var(--green);">📹</div>
+          <div class="f-text">
+            <h3>Live CCTV Remote Access</h3>
+            <p>Fully equipped with secure CCTV, allowing parents to view their children safely playing remotely.</p>
+          </div>
+        </div>
+
+        <div class="feature-box">
+          <div class="f-icon" style="background: var(--pink); color: white;">🧸</div>
+          <div class="f-text">
+            <h3>Super Safe & Caring</h3>
+            <p>Extra soft floors with <strong>Eva Mats</strong>, rounded corners, and the most loving teachers! Safe
+              play is our priority.</p>
+          </div>
+        </div>
+
+        <div class="feature-box">
+          <div class="f-icon" style="background: var(--purple); color: white;">🛏️</div>
+          <div class="f-text">
+            <h3>Daycare Comfort</h3>
+            <p>We provide <strong>separate cots</strong> for all our Daycare children for a cozy, peaceful nap time.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-box c-blue">
+          <div class="f-icon" style="background: var(--bg-sky); color: white;">🌊</div>
+          <div class="f-text">
+            <h3>Pure & Fresh</h3>
+            <p>Stay cool in <strong>AC classrooms</strong> with unlimited access to <strong>purified water</strong>.
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-box">
+          <div class="f-icon" style="background: var(--yellow);">👩‍👦</div>
+          <div class="f-text">
+            <h3>Personalized Focus</h3>
+            <p>An amazing <strong>8:1 student-teacher ratio</strong> ensures your child gets all the attention they
+              need.</p>
+          </div>
+        </div>
+
+        <div class="feature-box">
+          <div class="f-icon" style="background: var(--pink); color: white;">✨</div>
+          <div class="f-text">
+            <h3>Neat & Clean Facilities</h3>
+            <p>Spotless, hygienic <strong>restrooms (in & outside)</strong> for keeping our little explorers fresh!
+            </p>
+          </div>
+        </div>
+
+        <div class="feature-box c-blue">
+          <div class="f-icon" style="background: var(--green); color: white;">🏆</div>
+          <div class="f-text">
+            <h3>13 Years of Experience</h3>
+            <p>Our experienced team has been creating magical learning moments for over a decade!</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- 👩‍🏫 Teachers Section -->
+  <section id="staff" class="staff-section container">
+    <div class="reveal" style="text-align: center;">
+      <h2 class="h2-title">Meet Our Magical Teachers!</h2>
+      <p class="p-cute" style="margin: 0 auto;">The sweetest, kindest, and most fun guides for your little super stars!
+        🌟</p>
+    </div>
+
+    <div class="staff-grid">
+      <!-- Row 1 -->
+      <div class="staff-card c-staff-pink reveal" style="transition-delay: 0.1s;">
+        <div class="staff-avatar"><span style="font-size: 3rem;">👩‍🏫</span></div>
+        <h3 class="staff-name">Mrs. P. Vinmani</h3>
+        <p class="staff-desc">B.A., B.Ed.</p>
+        <div class="staff-role" style="border-color: var(--pink); color: var(--pink);">UKG</div>
+      </div>
+
+      <div class="staff-card c-staff-blue reveal" style="transition-delay: 0.2s;">
+        <div class="staff-avatar"><span style="font-size: 3rem;">👩‍🏫</span></div>
+        <h3 class="staff-name">Mrs. Subathra Devi</h3>
+        <p class="staff-desc">M.Sc., B.Ed.</p>
+        <div class="staff-role" style="border-color: var(--blue); color: var(--blue);">LKG</div>
+      </div>
+
+      <div class="staff-card c-staff-green reveal" style="transition-delay: 0.3s;">
+        <div class="staff-avatar"><span style="font-size: 3rem;">👩‍🏫</span></div>
+        <h3 class="staff-name">Mrs. V. Kowsalya</h3>
+        <p class="staff-desc">Montessori</p>
+        <div class="staff-role" style="border-color: var(--green); color: var(--green);">Play Group</div>
+      </div>
+
+      <div class="staff-card c-staff-yellow reveal" style="transition-delay: 0.4s;">
+        <div class="staff-avatar"><span style="font-size: 3rem;">👩‍🏫</span></div>
+        <h3 class="staff-name">Mrs. Usha Rani</h3>
+        <p class="staff-desc">D.G.N.M., B.A., C.R.I.</p>
+        <div class="staff-role" style="border-color: var(--yellow); color: var(--orange);">Pre.K.G.</div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="staff-card c-staff-purple reveal" style="transition-delay: 0.5s;">
+        <div class="staff-avatar"><span style="font-size: 3rem;">👩‍🏫</span></div>
+        <h3 class="staff-name">Mrs. Divya</h3>
+        <p class="staff-desc">B.A.</p>
+        <div class="staff-role" style="border-color: var(--purple); color: var(--purple);">Teacher</div>
+      </div>
+
+      <div class="staff-card c-staff-pink reveal" style="transition-delay: 0.6s;">
+        <div class="staff-avatar"><span style="font-size: 3rem;">👩‍🏫</span></div>
+        <h3 class="staff-name">Mrs. Selvi</h3>
+        <p class="staff-desc">Support Staff</p>
+        <div class="staff-role" style="border-color: var(--pink); color: var(--pink);">Nanny</div>
+      </div>
+
+      <div class="staff-card c-staff-blue reveal" style="transition-delay: 0.7s;">
+        <div class="staff-avatar"><span style="font-size: 3rem;">👩‍🏫</span></div>
+        <h3 class="staff-name">Mrs. Vimala</h3>
+        <p class="staff-desc">Support Staff</p>
+        <div class="staff-role" style="border-color: var(--blue); color: var(--blue);">Nanny</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 📸 Gallery Section -->
+  <section id="gallery" class="gallery-section">
+    <div class="container reveal">
+      <p class="gallery-label">Our World</p>
+      <h2 class="h2-title">Photo Gallery 📸</h2>
+      <p class="p-cute" style="margin: 0 auto 50px;">Peek into the magical moments at Starbell Kids! ✨</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </section>
+
+  <script>
+    (function () {
+      const imgs = [
+        "WhatsApp Image 2026-03-16 at 6.42.57 PM.jpeg",
+        "WhatsApp Image 2026-03-16 at 6.43.04 PM.jpeg",
+        "WhatsApp Image 2026-03-16 at 6.43.05 PM.jpeg",
+        "WhatsApp Image 2026-03-16 at 6.43.06 PM.jpeg",
+        "WhatsApp Image 2026-03-16 at 6.43.27 PM.jpeg",
+        "WhatsApp Image 2026-03-16 at 6.45.03 PM.jpeg",
+        "WhatsApp Image 2026-03-16 at 6.46.11 PM.jpeg",
+        "WhatsApp Image 2026-03-16 at 6.55.48 PM.jpeg",
+      ];
+
+      const columns = [
+        {
+          images: [imgs[0], imgs[1], imgs[2], imgs[3], imgs[4], imgs[5], imgs[6], imgs[7]],
+          heights: [160, 200, 150, 190, 170, 185, 165, 210],
+        },
+        {
+          images:  [imgs[2], imgs[3], imgs[4], imgs[5], imgs[6], imgs[7], imgs[1], imgs[0]],
+          heights: [200, 155, 185, 165, 210, 150, 195, 170],
+        },
+        {
+          images:  [imgs[4], imgs[5], imgs[6], imgs[7], imgs[3], imgs[0], imgs[1], imgs[2]],
+          heights: [145, 195, 165, 215, 155, 180, 200, 160],
+        },
+        {
+          images:  [imgs[6], imgs[7], imgs[5], imgs[0], imgs[1], imgs[2], imgs[3], imgs[4]],
+          heights: [185, 160, 210, 150, 195, 170, 155, 200],
+        },
+      ];
+
+      const grid = document.getElementById("galleryGrid");
+
+      columns.forEach(function (col) {
+        const colEl = document.createElement("div");
+        colEl.className = "gallery-col";
+
+        const doubled = col.images.concat(col.images);
+
+        doubled.forEach(function (src, i) {
+          const card = document.createElement("div");
+          card.className = "gallery-card";
+          card.style.height = col.heights[i % col.heights.length] + "px";
+
+          const img = document.createElement("img");
+          img.src = src;
+          img.alt = "Starbell Kids Gallery Photo";
+          img.loading = "lazy";
+          img.decoding = "async";
+
+          card.appendChild(img);
+          colEl.appendChild(card);
+        });
+
+        grid.appendChild(colEl);
+      });
+    })();
+  </script>
+
+  <!-- 📝 Registration Form -->
+  <section id="enroll" class="enroll">
+    <div class="container reveal">
+      <div class="form-container">
+        <div class="form-mascot">🦁</div>
+        <div style="text-align: center;">
+          <h2 class="h2-title"
+            style="color: var(--pink); text-shadow: none; border-bottom: 4px dashed var(--yellow); padding-bottom: 10px;">
+            Join The Adventure!</h2>
+          <p class="p-cute" style="margin: 20px auto 0;">Send us a message and we'll invite you for a fun campus tour!
+          </p>
+        </div>
+
+        <form id="enroll-form" onsubmit="handleEnrollSubmit(event);">
+          <div class="form-grid">
+            <div class="f-group">
+              <label>Parent's Super Name</label>
+              <input type="text" id="parent-name" name="parentName" placeholder="e.g. Papa Bear" required>
+            </div>
+            <div class="f-group">
+              <label>Child's Cute Name</label>
+              <input type="text" id="child-name" name="childName" placeholder="e.g. Little Leo" required>
+            </div>
+            <div class="f-group">
+              <label>Parent's Contact Number</label>
+              <input type="tel" id="parent-phone" name="parentPhone" placeholder="e.g. 9876543210" required>
+            </div>
+            <div class="f-group">
+              <label>Parent's Email ID</label>
+              <input type="email" id="parent-email" name="parentEmail" placeholder="e.g. parent@gmail.com" required>
+            </div>
+            <div class="f-group f-col-full">
+              <label>Select Play Group</label>
+              <select id="play-group" name="playGroup" required>
+                <option value="" disabled selected>Pick a fun room!</option>
+                <option value="Play Group (1.5+ Years)">🐣 Play Group (1.5+ Years)</option>
+                <option value="Pre Kindergarten (2.5+ Years)">🦋 Pre Kindergarten (2.5+ Years)</option>
+                <option value="Lower Kindergarten (3.5+ Years)">🚀 Lower Kindergarten (3.5+ Years)</option>
+                <option value="Upper Kindergarten (4.5+ Years)">🎓 Upper Kindergarten (4.5+ Years)</option>
+              </select>
+            </div>
+            <div class="f-group f-col-full">
+              <button type="submit" class="btn btn-yellow btn-submit btn-wiggle">Send Magic Letter! ✉️</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🦶 Footer -->
+  <footer>
+    <div class="train-track">
+      <div class="train">🚂🚃🧸🚃🎨</div>
+    </div>
+    <div class="container">
+      <a href="#" class="footer-logo">
+        <img src="image.png" alt="Starbell Kids Logo">
+        <span>Starbell Kids!</span>
+      </a>
+
+      <div
+        style="font-family: var(--font-hand); font-size: 1.2rem; color: #ECEFF1; margin-bottom: 20px; line-height: 1.6;">
+        <p style="margin-bottom: 5px;"><strong>Owner:</strong> Mrs. P. Vinmani Vijayakumar</p>
+        <p style="margin-bottom: 5px;"><strong>📞 Phone:</strong> 9578315590 &nbsp; | &nbsp; <strong>✉️ Email:</strong>
+          <a href="mailto:Starbellkids@gmail.com"
+            style="color: var(--yellow); text-decoration: none;">Starbellkids@gmail.com</a>
+        </p>
+        <p style="margin-bottom: 15px;"><strong>📍 Location:</strong> 169/7, Kanagambaram Street, Ground floor,
+          Peerkankaranai, Old GST Road, Chennai - 600063</p>
+      </div>
+
+      <p class="footer-text">13 Years of Magical Experiences! Come play with us!</p>
+      <p style="font-family: var(--font-bubbly); color: #78909C;">© 2026 Starbell Playschool. All Hugs Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./main.js"></script>
+</body>
+
+</html>
