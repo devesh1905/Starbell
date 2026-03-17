@@ -1,9 +1,52 @@
 (() => {
+  // Update this in ONE place (E.164 without "+", e.g. "919578315590")
+  const CONTACT_PHONE_E164 = '91XXXXXXXXXX';
+  const WHATSAPP_PREFILL = 'Hi, I am interested in admissions at Starbell Playschool';
+
   const topBar = document.querySelector('.top-bar');
   const header = document.getElementById('navbar');
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('navMenu');
   const navBackdrop = document.getElementById('navBackdrop');
+
+  const initContactLinks = () => {
+    const telHref = `tel:+${CONTACT_PHONE_E164}`;
+    document.querySelectorAll('a[data-contact="call"]').forEach((a) => {
+      a.setAttribute('href', telHref);
+    });
+
+    const waHref = `https://wa.me/${CONTACT_PHONE_E164}?text=${encodeURIComponent(WHATSAPP_PREFILL)}`;
+    document.querySelectorAll('a[data-contact="whatsapp"]').forEach((a) => {
+      a.setAttribute('href', waHref);
+    });
+  };
+
+  const initFloatingContactAvoidFooter = () => {
+    const floatEl = document.querySelector('.contact-float');
+    const footerEl = document.querySelector('footer');
+    if (!floatEl || !footerEl) return;
+
+    const baseBottom = 16;
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
+      const footerRect = footerEl.getBoundingClientRect();
+      const overlap = Math.max(0, window.innerHeight - footerRect.top);
+      const extra = overlap > 0 ? overlap + 12 : 0;
+      floatEl.style.bottom = `${baseBottom + extra}px`;
+    };
+
+    const schedule = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(update);
+    };
+
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+    window.requestAnimationFrame(update);
+  };
 
   const setHeaderOffsets = () => {
     const topBarH = topBar ? Math.ceil(topBar.getBoundingClientRect().height) : 0;
@@ -86,11 +129,52 @@
   window.requestAnimationFrame(() => {
     setHeaderOffsets();
   });
+
+  initContactLinks();
+  initFloatingContactAvoidFooter();
+
+  // Performance: default images to lazy-load unless explicitly set
+  document.querySelectorAll('img:not([loading])').forEach((img) => {
+    img.loading = 'lazy';
+  });
 })();
 
 // Handle enrollment form submission and open a professional email draft
 function handleEnrollSubmit(event) {
   event.preventDefault();
+
+  const form = document.getElementById('enroll-form');
+  const feedback = document.getElementById('enroll-feedback');
+  const submitBtn = form?.querySelector('button[type="submit"]');
+  const hideAfterMs = 5500;
+
+  if (!form || !feedback || !submitBtn) return;
+
+  const setLoading = (loading) => {
+    submitBtn.disabled = loading;
+    submitBtn.textContent = loading ? 'Sending...' : 'Submit';
+  };
+
+  let hideTimer = window.__enrollFeedbackTimer;
+  if (hideTimer) window.clearTimeout(hideTimer);
+
+  const showFeedback = (type, message) => {
+    feedback.classList.remove('success', 'error', 'show');
+    feedback.textContent = message;
+    feedback.classList.add(type);
+    // trigger transition
+    window.requestAnimationFrame(() => feedback.classList.add('show'));
+
+    window.__enrollFeedbackTimer = window.setTimeout(() => {
+      feedback.classList.remove('show');
+      window.setTimeout(() => {
+        feedback.classList.remove('success', 'error');
+        feedback.textContent = '';
+      }, 240);
+    }, hideAfterMs);
+  };
+
+  setLoading(true);
 
   const parentName = document.getElementById('parent-name').value.trim();
   const childName = document.getElementById('child-name').value.trim();
@@ -122,6 +206,18 @@ ${parentEmail}
   const body = encodeURIComponent(bodyText.trim());
   const mailtoLink = `mailto:${toEmail}?subject=${subject}&body=${body}`;
 
-  window.location.href = mailtoLink;
+  try {
+    const opened = window.open(mailtoLink, '_blank');
+    if (opened === null) {
+      throw new Error('Popup blocked');
+    }
+
+    form.reset();
+    setLoading(false);
+    showFeedback('success', 'Thank you! Your enquiry has been submitted successfully. We will contact you soon.');
+  } catch (e) {
+    setLoading(false);
+    showFeedback('error', 'Something went wrong. Please try again or contact us directly.');
+  }
 }
 
