@@ -39,7 +39,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const status = await github.rest.repos.getPagesSite({
+            const status = await github.rest.pages.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
             });
