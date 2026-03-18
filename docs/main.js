@@ -1,7 +1,7 @@
 (() => {
   // Update this in ONE place (E.164 without "+", e.g. "919578315590")
-  const CONTACT_PHONE_E164 = '91XXXXXXXXXX';
-  const WHATSAPP_PREFILL = 'Hi, I am interested in admissions at Starbell Playschool';
+  const CONTACT_PHONE_E164 = '919578315590';
+  const WHATSAPP_PREFILL = 'Hi';
 
   const topBar = document.querySelector('.top-bar');
   const header = document.getElementById('navbar');
