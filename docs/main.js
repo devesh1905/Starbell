@@ -182,7 +182,7 @@ function handleEnrollSubmit(event) {
   const parentEmail = document.getElementById('parent-email').value.trim();
   const playGroup = document.getElementById('play-group').value;
 
-  const toEmail = 'Starbellkids@gmail.com';
+  const toEmail = 'deveshwars1905@gmail.com';
   const subject = encodeURIComponent(`Application for Admission - ${childName || 'Child'} (${playGroup})`);
 
   const bodyText = `
