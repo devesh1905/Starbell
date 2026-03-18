@@ -186,9 +186,9 @@ function handleEnrollSubmit(event) {
   const subject = encodeURIComponent(`Application for Admission - ${childName || 'Child'} (${playGroup})`);
 
   const bodyText = `
-Dear Starbell Kids Admissions Team,
+Dear Star Bell Kids Admissions Team,
 
-I would like to submit an application for my child to join ${playGroup} at Starbell Kids Playschool.
+I would like to submit an application for my child to join ${playGroup} at Star Bell Kids Playschool.
 
 Child's Name: ${childName}
 Parent's Name: ${parentName}
