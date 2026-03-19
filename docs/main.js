@@ -139,8 +139,8 @@
   });
 })();
 
-// Handle enrollment form submission and open a professional email draft
-function handleEnrollSubmit(event) {
+// Handle enrollment form submission and send email directly
+async function handleEnrollSubmit(event) {
   event.preventDefault();
 
   const form = document.getElementById('enroll-form');
@@ -152,7 +152,7 @@ function handleEnrollSubmit(event) {
 
   const setLoading = (loading) => {
     submitBtn.disabled = loading;
-    submitBtn.textContent = loading ? 'Sending...' : 'Submit';
+    submitBtn.textContent = loading ? 'Sending Magic Letter! ✉️...' : 'Send Magic Letter! ✉️';
   };
 
   let hideTimer = window.__enrollFeedbackTimer;
@@ -182,8 +182,8 @@ function handleEnrollSubmit(event) {
   const parentEmail = document.getElementById('parent-email').value.trim();
   const playGroup = document.getElementById('play-group').value;
 
-  const toEmail = 'deveshwars1905@gmail.com';
-  const subject = encodeURIComponent(`Application for Admission - ${childName || 'Child'} (${playGroup})`);
+  const toEmail = 'info@starbellkids.com';
+  const subject = `Application for Admission - ${childName || 'Child'} (${playGroup})`;
 
   const bodyText = `
 Dear Star Bell Kids Admissions Team,
@@ -203,13 +203,22 @@ ${parentPhone}
 ${parentEmail}
 `;
 
-  const body = encodeURIComponent(bodyText.trim());
-  const mailtoLink = `mailto:${toEmail}?subject=${subject}&body=${body}`;
-
   try {
-    const opened = window.open(mailtoLink, '_blank');
-    if (opened === null) {
-      throw new Error('Popup blocked');
+    const response = await fetch(`https://formsubmit.co/ajax/${toEmail}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        _subject: subject,
+        _replyto: parentEmail,
+        message: bodyText.trim()
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
     }
 
     form.reset();
